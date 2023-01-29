@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silentium.WebAPI", "Silentium\Silentium.WebAPI.csproj", "{128D498D-ED2E-48F5-8ADC-E715040F8044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silentium.Data", "Silentium.Data\Silentium.Data.csproj", "{5ACFB2C5-5A57-494A-A897-7E85FADC9406}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{128D498D-ED2E-48F5-8ADC-E715040F8044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128D498D-ED2E-48F5-8ADC-E715040F8044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128D498D-ED2E-48F5-8ADC-E715040F8044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128D498D-ED2E-48F5-8ADC-E715040F8044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACFB2C5-5A57-494A-A897-7E85FADC9406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACFB2C5-5A57-494A-A897-7E85FADC9406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACFB2C5-5A57-494A-A897-7E85FADC9406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACFB2C5-5A57-494A-A897-7E85FADC9406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1732084E-3FAC-4EAC-9CE3-4811D6F050C7}
+	EndGlobalSection
+EndGlobal
