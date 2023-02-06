@@ -6,6 +6,6 @@ namespace Silentium.Data.Context {
         public SilentiumContext(DbContextOptions<SilentiumContext> options) : base(options) {
         }
 
-        public DbSet<Silentium.Domain.File> Files { get; set; }
+        public DbSet<Silentium.Domain.SentFile> Files { get; set; }
     }
 }

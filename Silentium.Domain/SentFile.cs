@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace Silentium.Domain {
-    public class File {
+    public class SentFile {
         public int Id { get; set; }
 
         [Required(ErrorMessage = "FileName is required")]

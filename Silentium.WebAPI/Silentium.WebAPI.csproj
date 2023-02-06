@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Silentium.Data\Silentium.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+
 </Project>
