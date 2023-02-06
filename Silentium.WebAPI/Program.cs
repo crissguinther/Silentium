@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Silentium.Data.Context;
+using Silentium.WebAPI.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//if (!isDevelopment)
 builder.Services.AddDbContext<SilentiumContext>(options => 
     options.UseMySql(builder.Configuration.GetConnectionString("SilentiumDatabase"), 
     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("SilentiumDatabase"))
 ));
-//else builder.Services.AddDbContext<SilentiumContext>(options => options.UseInMemoryDatabase("silentium"));
+builder.Services.AddScoped<ApplicationConfig>();
 
 var app = builder.Build();
 

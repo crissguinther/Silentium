@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Silentium.WebAPI\Silentium.WebAPI.csproj" />
+    <ProjectReference Include="..\Silentium\Silentium.WebAPI.csproj" />
+  </ItemGroup>
+
 </Project>
