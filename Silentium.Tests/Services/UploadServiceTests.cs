@@ -1,4 +1,5 @@
 ﻿using FakeItEasy;
+using ICSharpCode.SharpZipLib.Zip;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Silentium.Services.Uploads;
@@ -35,6 +36,31 @@ namespace SilentiumTests.Services {
             Assert.NotNull(result);
             Assert.True(isCreated);
             Assert.True(isEqual);
+        }
+
+        [Fact]
+        public async Task UploadService_Should_PasswordProtectUploadedFileAndDeleteTheOriginal() {
+            // Arrange
+            byte[] filebytes = Encoding.UTF8.GetBytes("A test file");
+            IFormFile file = new FormFile(new MemoryStream(filebytes), 3, filebytes.Length, "EncryptionTest", "file.txt");
+            string generatedFilePath = await _uploadService.StoreReceivedFile(file);
+            string password = "aPassWord";
+
+            var tempFile = File.Create(Path.Combine(Path.GetTempPath(), file.Name));
+            await file.CopyToAsync(tempFile);
+            tempFile.Close();
+
+            // Act            
+            string encryptedFilePath = _uploadService.SetPasswordForReceivedFile(generatedFilePath, password);
+            bool isCreated = File.Exists(encryptedFilePath);
+            bool isEqual = UploadService.IsEqual(new FileInfo(tempFile.Name), new FileInfo(encryptedFilePath));
+            bool isOriginalDeleted = File.Exists(tempFile.Name);
+
+            // Assert
+            Assert.NotNull(encryptedFilePath);
+            Assert.True(isCreated);
+            Assert.False(isEqual);
+            Assert.True(isOriginalDeleted);
         }
     }
 }
